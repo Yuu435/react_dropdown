@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-const DropdownMenu = ({ options, setDropdownOpen, setSelectedOption }) => {
-//   const [selectedOption, setSelectedOption] = useState("");
+const DropdownMenu = ({ options, setDropdownOpen, setSelectedOption, setShowModal, setModalContent }) => {
+
 
   const handleSelectedOption = (item) => {
+    // Sự kiện btn dropdown
     setSelectedOption(item);
     setDropdownOpen(false);
+    // Sự kiện modal
+    setShowModal(true);
+    setModalContent(`Đây là: ${item}`)
   };
   return (
     <div className="dropdown-menu">
